@@ -1,22 +1,60 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const pageTitle = "About Me";
+const idenfity = {
+  firstName: "Diego",
+  lastName: "Chacon",
+  country: "Colombia",
+  occupation: "QA Engineer",
+  hobbies: ["Videogames", "Movies", "Travels"],
+};
+
+const skills = [
+  "HTML",
+  "CSS",
+  "JS/TS",
+  "React",
+  "Node JS",
+  "Python",
+  "MongoDB",
+];
+
+const happy = true;
+const finished = false;
+const energi = 3;
 ---
 
+<head>
+  <title>{pageTitle}</title>
+</head>
 <Layout>
-  <h1>About</h1>
+  <h1>{pageTitle}</h1>
   <p>
-    Asperiores perferendis est totam molestias earum. Et soluta consequuntur aut
-    est et delectus at. Quasi recusandae molestiae perferendis qui tenetur ut.
-    Temporibus velit vitae voluptates quia voluptas ea aut.
+    Meet {idenfity.firstName}
+    {idenfity.lastName}, a {idenfity.occupation} from {idenfity.country} who is passionate
+    about creating high-quality software. With skills in:
+    <ul>
+      {skills.map((skill) => <li>{skill}</li>)}
+    </ul>
+    {idenfity.firstName} has a wide range of knowledge in web development and databases.
   </p>
   <p>
-    Neque recusandae natus autem consequatur est natus ea voluptatem. Officiis
-    commodi quia autem illo officiis quo harum. Sed velit maxime perferendis.
-    Fugiat rerum qui aut qui placeat.
+    When he's not working, {idenfity.firstName} enjoys {idenfity.hobbies[0]}, {
+      idenfity.hobbies[1]
+    }, and {idenfity.hobbies[2]}. He is a technology enthusiast and is always
+    looking to learn new skills and explore new tools. If you have a software
+    project that needs rigorous quality assurance, {idenfity.firstName} is the right
+    person for the job.
   </p>
-  <p>
-    Quibusdam totam voluptatibus cum dolorem voluptatem ex. Quia vero tenetur
-    molestiae autem quisquam porro sit. Sequi sint quasi minus ullam libero. Ut
-    possimus perferendis esse dolores omnis.
-  </p>
+
+  {happy && <p>I'm happy to be learning Astro!</p>}
+  {finished && <p>I finished this tutorial!</p>}
+  {
+    energi === 3 ? (
+      <p>We have energi to learn!</p>
+    ) : (
+      <p>Its late, I need some rest</p>
+    )
+  }
 </Layout>
