@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
 
 const pageTitle = "About Me";
 const idenfity = {
@@ -23,10 +24,23 @@ const skills = [
 const happy = true;
 const finished = false;
 const energi = 3;
+
+const skillColor = "navy";
+const fontWeight = "bold";
 ---
 
 <head>
   <title>{pageTitle}</title>
+  <style define:vars={{ skillColor, fontWeight }}>
+    h1 {
+      color: purple;
+      font-size: 4rem;
+    }
+    .skill {
+      color: var(--skillColor);
+      font-weight: var(--fontWeight);
+    }
+  </style>
 </head>
 <Layout>
   <h1>{pageTitle}</h1>
@@ -35,7 +49,7 @@ const energi = 3;
     {idenfity.lastName}, a {idenfity.occupation} from {idenfity.country} who is passionate
     about creating high-quality software. With skills in:
     <ul>
-      {skills.map((skill) => <li>{skill}</li>)}
+      {skills.map((skill) => <li class="skill">{skill}</li>)}
     </ul>
     {idenfity.firstName} has a wide range of knowledge in web development and databases.
   </p>

@@ -1,0 +1,16 @@
+---
+import "../styles/global.css";
+
+const platform = "GitHub";
+const username = "dchacon130";
+import Social from "./Social.astro";
+---
+
+<footer>
+  <p>
+    Learn more about my projects on:
+    <Social platform={platform} username={username} platformName="GitHub" /> |
+    <Social platform="x" username="DiegoChacon20" platformName="X" /> |
+    <Social platform="youtube" username="@midulive" platformName="YouTube" />
+  </p>
+</footer>
