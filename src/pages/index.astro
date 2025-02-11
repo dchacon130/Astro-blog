@@ -1,11 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CurriculumVintae from "../components/CurriculumVintae.astro";
+import Greeting from "../components/Greeting";
+
 const pageTitle = "My Astro Blog";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <h1>{pageTitle}</h1>
+  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
   <p>
     Asperiores perferendis est totam molestias earum. Et soluta consequuntur aut
     est et delectus at. Quasi recusandae molestiae perferendis qui tenetur ut.
